@@ -4,6 +4,22 @@
 
 All changes since the first version, newest first.
 
+### Public-release fixes (2026-10-29)
+
+From the review in issue #7 (AI-ModCon/benchmark-builder):
+- The README clones from `AI-ModCon/benchmark-builder`, the repository's new home.
+- Dead links fixed: the NERSC Perlmutter docs page (`examples/wa-hls4ml/MODEL_CARD.md`) and
+  the PyG wheel index in `assets/codabench/Dockerfile.gpu.template`, which now explains
+  how PyG's indexes are keyed.
+- `SKILL.md` writes files of the generated benchmark repository as `<repo>/...` (e.g.
+  `<repo>/docs/VALIDATION.md`), so they aren't read as files of this skill.
+- New `CONTRIBUTING.md` (with the ModCon Base policy on AI-assisted contributions),
+  `CODE_OF_CONDUCT.md`, `SECURITY.md` (private vulnerability reporting, and the
+  Codabench validator's trust boundary), and issue and pull-request templates, all
+  adapted from `AI-ModCon/BaseTemplate`.
+- The README acknowledges Genesis Mission support (BaseTemplate's required wording) and
+  links the new community files.
+
 ### Documentation cleanup (2026-10-14)
 
 Removes repeated material from the references, so each fact has one home:
