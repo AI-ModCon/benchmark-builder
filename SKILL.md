@@ -185,7 +185,7 @@ README reports results:
 
 axess's paper states SMAPE with ε = 1, but its numbers only reproduce with ε = 1e-8. Its
 dense DSP R² is printed as −0.74 while its own RMSE implies −111.74. The benchmark
-implements the stated ε = 1 and documents all three findings in its `docs/VALIDATION.md`.
+implements the stated ε = 1 and documents all three findings in its `<repo>/docs/VALIDATION.md`.
 
 **Metric choice must follow from the benchmark's own AI/ML motif; there is no default
 suite.** Check the motif against the "What metrics do comparable existing benchmarks
@@ -207,7 +207,7 @@ Metric Quality credit however well it's implemented.
 Two more checks, both detailed in `references/metrics-and-uq.md`:
 - **Independent recomputation.** For regression or classification, recompute the
   reference model's metrics with the `uq-metrics-evaluator` skill as a second
-  implementation of `score.py`, and record agreement in `docs/VALIDATION.md`.
+  implementation of `score.py`, and record agreement in `<repo>/docs/VALIDATION.md`.
 - **Uncertainty.** If a reference model outputs uncertainties or class probabilities, ask
   whether calibration belongs in the benchmark's metrics (ECE, Brier, NLL, miscalibration
   area). If its confidence drives decisions, offer the `uncertainty-quantification` audit.
@@ -229,7 +229,7 @@ mode decision later. The `predict → score_all.sh` contract is the same either 
 
 **Verify the reference solution before building anything on it.** Read
 `references/reference-solution-checks.md` and run every check. Results go in
-`docs/VALIDATION.md`. In short:
+`<repo>/docs/VALIDATION.md`. In short:
 1. identity and weights (strict loading, sha256, where the weights really live);
 2. training label vs scored label, checked on data;
 3. the whole inference procedure (preprocessing, derived statistics, post-processing);
@@ -271,6 +271,9 @@ As the interview answers each element, generate the real files. Don't wait until
 to write everything at once, since later answers often reveal that earlier files need
 revising.
 
+Paths written as `<repo>/...` (and the layout below) are files in the benchmark repository
+you generate, not in this skill.
+
 **Propose the recommended repository structure by default, and explain why.** It's
 specified piece by piece in `references/repo-structure.md`, generalized from
 axess-benchmark. In summary:
@@ -280,7 +283,7 @@ axess-benchmark. In summary:
 ├── README.md, SUBMISSION.md, CITATION.cff, LICENSE, rubric.yaml, SCORE_REPORT.md
 ├── pyproject.toml, requirements*.txt (one per stack that must stay separate), .gitattributes
 ├── data/SCHEMA.md, [data/croissant.json]
-├── docs/VALIDATION.md, docs/<MACHINE>.md
+├── docs/  VALIDATION.md, <MACHINE>.md
 ├── reference_solution/README.md          documentation only
 ├── reference_results/                    committed LEADERBOARD.md + <split>/<model>/metrics
 ├── weights/MANIFEST.json (+ small derived artifacts)
@@ -316,7 +319,7 @@ Data reading, missing-truth handling, metrics, preprocessing, stack workarounds,
 tolerances and job sizes all come from this benchmark's interview answers and
 measurements. axess's choices appear in the references only as labelled examples. A fix
 found while building a benchmark goes into that benchmark's code and docs (e.g.
-`<hpc>/stack.sh`, `docs/VALIDATION.md`), never into this skill's templates.
+`<hpc>/stack.sh`, `<repo>/docs/VALIDATION.md`), never into this skill's templates.
 
 **Generate the tree; don't copy a skeleton.** Which optional pieces exist, which models,
 splits and targets there are, whether there's training, and which machines and submission
@@ -401,7 +404,7 @@ its reference in full first; the steps are there.
 - **AmSC MLflow tracking** (optional; the `amsc-mlflow` skill, `references/genesis-skills.md`).
   Offer it to Genesis/AmSC users:
   - log `reference_results/` with its `log_benchmark_results.py` (dry run first) and record
-    the run ID in `docs/VALIDATION.md`;
+    the run ID in `<repo>/docs/VALIDATION.md`;
   - register reference weights from `weights/MANIFEST.json` as `staging`, and move
     `production` only after verification, with the user's go-ahead;
   - track training runs from cluster jobs with rank-0 logging.

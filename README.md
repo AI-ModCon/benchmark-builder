@@ -61,7 +61,7 @@ submission.
 Copy (or clone) this repo into your Claude Code skills directory:
 
 ```bash
-git clone https://github.com/ben-hawks/benchmark-builder.git ~/.claude/skills/benchmark-builder
+git clone https://github.com/AI-ModCon/benchmark-builder.git ~/.claude/skills/benchmark-builder
 ```
 
 or, for a single project rather than every session, into that project's
