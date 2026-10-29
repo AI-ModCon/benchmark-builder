@@ -93,8 +93,8 @@ and say in the pull request what you ran.
   it; keep each fact in one place (see the "Documentation cleanup" entry in
   `CHANGELOG.md`).
 - Templates in `assets/` stay generic. A fix found while building one benchmark goes into
-  that benchmark's own code and docs, not into these templates (see `SKILL.md`, "Decide the
-  contents per benchmark").
+  that benchmark's own code and docs, not into these templates (see `SKILL.md`, "Build the
+  artifacts").
 - Write facts you verified, with the evidence (a command, a file, a date). Mark anything
   unverified as such.
 - Paths to files in a generated benchmark repository are written `<repo>/...`.

@@ -19,6 +19,13 @@ From the review in issue #7 (AI-ModCon/benchmark-builder):
   adapted from `AI-ModCon/BaseTemplate`.
 - The README acknowledges Genesis Mission support (BaseTemplate's required wording) and
   links the new community files.
+- `SKILL.md` is restructured to about 4,600 tokens, under the 5,000 the genesis validator
+  recommends (it was about 6,370). Details whose full version already lives in a reference
+  are now a pointer: the citation rules and file conventions (both in
+  `references/repo-structure.md`), the list of loaded genesis skills (in
+  `references/genesis-skills.md`) and the tracking steps (in its `amsc-mlflow` notes). The
+  workflow, the interview questions, the verification checks and the guardrails stay in
+  `SKILL.md`.
 
 ### Documentation cleanup (2026-10-14)
 
