@@ -122,7 +122,7 @@ writes the data card.
 
 **C. Performance Metric(s).** What's measured, and does it capture what matters, not just
 what's easy to compute? This category has two sub-scales (`references/ontology.md`). Pin
-down the exact formula, edge cases (division by zero, empty or unparseable predictions),
+down the exact formula, edge cases (division by zero, empty or unparsable predictions),
 per-target vs aggregated, and whether one metric is enough or it's a multi-dimensional
 benchmark (e.g. accuracy under a latency bound).
 
