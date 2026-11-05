@@ -61,7 +61,7 @@ submission.
 Copy (or clone) this repo into your Claude Code skills directory:
 
 ```bash
-git clone https://github.com/ben-hawks/benchmark-builder.git ~/.claude/skills/benchmark-builder
+git clone https://github.com/AI-ModCon/benchmark-builder.git ~/.claude/skills/benchmark-builder
 ```
 
 or, for a single project rather than every session, into that project's
@@ -120,7 +120,18 @@ Surrogate Models for hls4ml Resource and Latency Estimation"* (Hawks et al., 202
 [arXiv:2511.05615](https://arxiv.org/abs/2511.05615)) as its worked example of a
 benchmark that scores well against that rubric.
 
+## Contributing
+
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) for how to report issues,
+submit pull requests, run the checks, and the policy on AI-assisted contributions. This
+project follows a [Code of Conduct](CODE_OF_CONDUCT.md). Report security vulnerabilities
+privately, as described in [SECURITY.md](SECURITY.md).
+
 ## License
 
 Apache License 2.0; see [LICENSE](LICENSE). Datasets, papers and third-party code used by
 a benchmark built with this skill keep their own licenses.
+
+## Acknowledgments
+
+This project acknowledges support from the U.S. Department of Energy's Genesis Mission.

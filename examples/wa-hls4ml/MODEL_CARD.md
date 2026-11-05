@@ -108,7 +108,7 @@ Graph Attention Network v2 (`FPGA_GNN_GATv2`, PyTorch Geometric `GATv2Conv`).
 - **Inference:** CPU or one GPU.
   - 1.1 ms/sample on a workstation CPU, including featurization.
   - The full benchmark ran on one NVIDIA A100 on
-    [NERSC Perlmutter](https://docs.nersc.gov/systems/perlmutter/) (Slurm jobs
+    [NERSC Perlmutter](https://docs.nersc.gov/systems/perlmutter/architecture/) (Slurm jobs
     59209565–68, 2026-10-02) and reproduced the CPU reference results to ≤2.4e-4
     relative.
 
