@@ -18,12 +18,17 @@
 # something this Dockerfile controls.
 FROM codalab/codalab-legacy:gpu310
 
-# --- PyTorch Geometric example: must match the base image's torch build (2.3.1) and
-# CUDA version (12.4) exactly, or it will fail at import time, not at build time. Check
-# https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html for the
-# current wheel index matching your actual base image's torch+CUDA before uncommenting. ---
+# --- PyTorch Geometric example: its compiled extensions must match the base image's torch
+# build exactly, or they fail at import time, not at build time. PyG's wheel indexes are
+# keyed by torch MAJOR.MINOR.0 and by the CUDA version torch was BUILT with, which is not
+# necessarily the image's CUDA runtime (gpu310's runtime is CUDA 12.4, while PyPI's torch
+# 2.3.1 wheels are built for CUDA 12.1). Check inside the image before uncommenting:
+#     python3 -c "import torch; print(torch.__version__, torch.version.cuda)"
+# then pick the index from
+# https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html
+# (for torch 2.3.x + CUDA 12.1: https://data.pyg.org/whl/torch-2.3.0+cu121.html). ---
 # RUN python3 -m pip install torch_geometric \
-#     -f https://data.pyg.org/whl/torch-2.3.1+cu124.html
+#     -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
 
 # --- Add any other reference-solution-specific packages the same way: ---
 # RUN python3 -m pip install \
